@@ -5,12 +5,33 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
+    <%= stylesheet_link_tag "bootstrap" %>
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
   </head>
 
-  <body>
+  <body class="d-flex h-100 text-center text-white bg-dark">
+    
+<div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
+  <header class="mb-auto">
+    <div>
+      <h3 class="float-md-start mb-0">HR</h3>
+      <nav class="nav nav-masthead justify-content-center float-md-end">
+
+      </nav>
+    </div>
+  </header>
+
+  <main class="px-3">
     <%= yield %>
+  </main>
+
+  <footer class="mt-auto ">
+    
+  </footer>
+</div>
+
+
+    
   </body>
 </html>

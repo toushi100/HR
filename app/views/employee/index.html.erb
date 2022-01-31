@@ -1,0 +1,22 @@
+<div class="col-1 my-5 "><a class="btn btn-primary rounded-1" href="javascript:history.back()"> Back</a></div>
+<h1>Employees</h1>
+<div class="container  mt-5 pt-5">
+  <div class="row d-flex justify-content-center">
+    <% for emp in @emp%>
+      <div class="col-lg-3 mb-4">
+        <div class="card text-dark">
+          <img class="card-img-top" src="" alt="">
+          <div class="card-body">
+            <h5 class="card-title"><%= emp.name %></h5>
+            <p class="card-text">
+              Email : <%= emp.email %> </br>
+            Job : <%= emp.job %></br>
+          Salary : <%= emp.salary %></br>
+        Status : <%= emp.employee_status %></br>
+    </p>
+  </div>
+</div>
+</div>
+<% end %>
+</div>
+</div>

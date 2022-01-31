@@ -1,0 +1,24 @@
+<div class="col-1 mt-5 "><a class="btn btn-primary rounded-1" href="javascript:history.back()"> Back</a></div>
+<h1>Team</h1>
+
+
+<div class="container  mt-5 pt-5">
+  <div class="row d-flex justify-content-center">
+    <% for team in @team%>
+      <div class="col-lg-3 mb-4">
+        <div class="card text-dark">
+          <img class="card-img-top" src="" alt="">
+          <div class="card-body">
+            <h5 class="card-title"><%= team.name %></h5>
+            <p class="card-text">
+              ID : <%= team.id %> </br>
+              description : <%= team.description %> </br>
+              Members : <%= team.members %> </br>
+              team lead : <%= team.team_lead %> </br>
+    </p>
+  </div>
+</div>
+</div>
+<% end %>
+</div>
+</div>
