@@ -1,23 +1,42 @@
+<div class = "row">
+  <div class="col-1 my-5 text-left">
+    <a class="btn btn-primary rounded-1" href="javascript:history.back()"> Back</a>
+  </div>
+  <div class="col-10 my-5 text-right p-0">
+  
+  </div>
+  <div class="col-1 my-5 text-right p-0">
+    <a class="btn btn-primary rounded-1  float-right" href="javascript:history.back()"> Add New User</a>
+  </div>
+</div>
 
 
-<div class="col-1 my-5 "><a class="btn btn-primary rounded-1" href="javascript:history.back()"> Back</a></div>
 <h1>User</h1>
 <div class="container  mt-5 pt-5">
   <div class="row d-flex justify-content-center">
-    <% for user in @user%>
-      <div class="col-lg-3 mb-4">
-        <div class="card text-dark">
-          <img class="card-img-top" src="" alt="">
-          <div class="card-body">
-            <h5 class="card-title"><%= user.name %></h5>
-            <p class="card-text">
-            ID : <%= user.id %> </br>
-            Email : <%= user.email %> </br>
-
-    </p>
+    <table class="table table-dark">
+      <thead>
+        <tr>
+          <th scope="col">ID</th>
+          <th scope="col">Name</th>
+          <th scope="col">Email</th>
+          <th scope="col">Password</th>
+          <th class = "text-center"scope="col">Links</th>
+        </tr>
+      </thead>
+      <% for user in @user%>
+        <tbody>
+          <tr>
+            <th scope="row">1</th>
+            <td><%=user.id%></td>
+            <td><%=user.name%></td>
+            <td><%=user.email%></td>
+            <td>show</td>
+            <td>edit</td>
+            <td>delete</td>
+          </tr>
+        </tbody>
+      <% end %>
+    </table>
   </div>
-</div>
-</div>
-<% end %>
-</div>
 </div>
