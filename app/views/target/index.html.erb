@@ -7,7 +7,7 @@
   
   </div>
   <div class="col-1 my-5 text-right p-0">
-    <a class="btn btn-primary rounded-1  float-right" href="javascript:history.back()"> Add New Employee</a>
+    <a class="btn btn-primary rounded-1  float-right" href="javascript:history.back()"> Add New Target</a>
   </div>
 </div>
 <h1>Target</h1>
@@ -28,20 +28,21 @@
           <th class = "text-center"scope="col">Links</th>
         </tr>
       </thead>
-      <% for target in @target%>
+      <% for tar in @target%>
         <tbody>
           <tr>
-            <td><%= target.id %></td>
-            <td><%= target.title %> </td>
-            <td><%= target.description %></td>
-            <td> <%= target.start_date %></td>
-            <td> <%= target.finish_date %> </td>
-            <td> <%= target.team %> </td>
+            <td><%= tar.id %></td>
+            <td><%= tar.title %> </td>
+            <td><%= tar.description %></td>
+            <td> <%= tar.start_date %></td>
+            <td> <%= tar.finish_date %> </td>
+            <td> <%= tar.team %> </td>
        
-            <td>  <%= target.status %> </td>
-            <td><a class = "btn btn-primary p-1 py-0">show</a></td>
+            <td>  <%= tar.status %> </td>
+            <td><%= link_to 'Show',false ,class: "btn btn-primary p-1 py-0" %></td>
             <td><a class = "btn btn-warning p-1 py-0">edit</a></td>
-            <td><a class = "btn btn-danger p-1 py-0">delete</a></td>
+            <td><%= button_to "Delete",{ action: "destroy", id: tar.id },
+                                method: :delete, data: { confirm: "Are you sure?" } ,class: "btn btn-danger p-1 py-0"%></td>
           </tr>
         </tbody>
       <% end %>
