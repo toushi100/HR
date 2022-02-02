@@ -27,13 +27,13 @@
       <% for user in @user%>
         <tbody>
           <tr>
-            <th scope="row">1</th>
             <td><%=user.id%></td>
             <td><%=user.name%></td>
             <td><%=user.email%></td>
-            <td>show</td>
-            <td>edit</td>
-            <td>delete</td>
+            <td><%=user.passward%></td>
+            <td><a class = "btn btn-primary p-1 py-0">show</a></td>
+            <td><a class = "btn btn-warning p-1 py-0">edit</a></td>
+            <td><a class = "btn btn-danger p-1 py-0">delete</a></td>
           </tr>
         </tbody>
       <% end %>
