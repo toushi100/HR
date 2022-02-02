@@ -1,26 +1,50 @@
 
-<div class="col-1 my-5 "><a class="btn btn-primary rounded-1" href="javascript:history.back()"> Back</a></div>
-<h1>Target</h1>
-<div class="container  mt-5 pt-5">
-  <div class="row d-flex justify-content-center">
-    <% for target in @target%>
-      <div class="col-lg-3 mb-4">
-        <div class="card text-dark">
-          <img class="card-img-top" src="" alt="">
-          <div class="card-body">
-            <h5 class="card-title"><%= target.title %></h5>
-            <p class="card-text">
-            ID : <%= target.id %> </br>
-            description : <%= target.description %> </br>
-            start date : <%= target.start_date %> </br>
-            Finish Date : <%= target.finish_date %> </br>
-            team : <%= target.team %> </br>
-            Status : <%= target.status %> </br>
-
-    </p>
+<div class = "row">
+  <div class="col-1 my-5 text-left">
+    <a class="btn btn-primary rounded-1" href="javascript:history.back()"> Back</a>
+  </div>
+  <div class="col-10 my-5 text-right p-0">
+  
+  </div>
+  <div class="col-1 my-5 text-right p-0">
+    <a class="btn btn-primary rounded-1  float-right" href="javascript:history.back()"> Add New Employee</a>
   </div>
 </div>
-</div>
-<% end %>
-</div>
+<h1>Target</h1>
+
+
+<div class="container  mt-5 pt-5">
+  <div class="row d-flex justify-content-center">
+    <table class="table table-dark">
+      <thead>
+        <tr>
+          <th scope="col">ID</th>
+          <th scope="col">Title</th>
+          <th scope="col">description</th>
+          <th scope="col">Start date</th>
+          <th scope="col">Finish Date</th>
+          <th scope="col">Team</th>
+          <th scope="col">Status</th>
+          <th class = "text-center"scope="col">Links</th>
+        </tr>
+      </thead>
+      <% for target in @target%>
+        <tbody>
+          <tr>
+            <td><%= target.id %></td>
+            <td><%= target.title %> </td>
+            <td><%= target.description %></td>
+            <td> <%= target.start_date %></td>
+            <td> <%= target.finish_date %> </td>
+            <td> <%= target.team %> </td>
+       
+            <td>  <%= target.status %> </td>
+            <td><a class = "btn btn-primary p-1 py-0">show</a></td>
+            <td><a class = "btn btn-warning p-1 py-0">edit</a></td>
+            <td><a class = "btn btn-danger p-1 py-0">delete</a></td>
+          </tr>
+        </tbody>
+      <% end %>
+    </table>
+  </div>
 </div>
