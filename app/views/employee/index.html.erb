@@ -3,15 +3,12 @@
     <a class="btn btn-primary rounded-1" href="javascript:history.back()"> Back</a>
   </div>
   <div class="col-10 my-5 text-right p-0">
-  
   </div>
   <div class="col-1 my-5 text-right p-0">
     <a class="btn btn-primary rounded-1  float-right" href="javascript:history.back()"> Add New Employee</a>
   </div>
 </div>
 <h1>Employees</h1>
-
-
 <div class="container  mt-5 pt-5">
   <div class="row d-flex justify-content-center">
     <table class="table table-dark">
@@ -37,7 +34,9 @@
             <td>  <%= emp.employee_status %> </td>
             <td><a class = "btn btn-primary p-1 py-0">show</a></td>
             <td><a class = "btn btn-warning p-1 py-0">edit</a></td>
-            <td><a class = "btn btn-danger p-1 py-0">delete</a></td>
+            <td><%= button_to "Delete",{ action: "destroy", id: emp.id },
+                                method: :delete, data: { confirm: "Are you sure?" } ,
+                                class: "btn btn-danger p-1 py-0"%></td>
           </tr>
         </tbody>
       <% end %>

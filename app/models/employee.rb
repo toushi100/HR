@@ -1,9 +1,10 @@
 class Employee < ApplicationRecord
     validates! :name, length: { minimum: 2 ,maximum: 15} ,presence: true
-    validates! :description, length: { minimum: 20} ,presence: true
-    validates! :teams ,presence: true , inclusion: { in: 0..9 }, numericality: true
-    validates! :manager ,presence: true
+    validates! :email,:uniqueness => {:case_sensitive => false} ,presence: true
+    validates! :job ,presence: true
+    validates! :salary ,presence: true , numericality: true
+    validates! :employee_status ,presence: true
 
-    has_many :Teams
-    has_one :Employee
+    belongs_to :division
+    belongs_to :team
 end

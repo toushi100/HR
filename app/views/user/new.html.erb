@@ -1,0 +1,36 @@
+<%= form_with url:"create",class:"px-5 mx-5" ,method: :post do |form| %>
+  <% if @user.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved:</h2>
+      <ul>
+        <% @user.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <div class="row my-5">
+    <div class="form-group m-0 col-md-6">
+      <%= form.label :name , class:"text-left"%>
+      <%= form.text_field :name ,class:"form-control"%>
+    </div>
+    <div class="form-group m-0 col-md-6" >
+      <%= form.label :email %>
+      <%= form.text_field :email ,class:"form-control"%>
+    </div>
+  </div>
+  <div class="row my-5">
+    <div class="form-group col-md-6">
+      <%= form.label :passward, class:"m-0 p-0 text-left"  %>
+      <%= form.text_field :passward ,class:"form-control"%>
+    </div>
+  </div>
+  <div class="row my-5">
+<div class="form-group col-md-11">
+  
+    </div>
+    <div class="form-group col-md-1" >
+      <%= form.submit "Submit" ,class:"btn btn-primary" %>
+    </div>
+  </div>
+<% end %>

@@ -6,7 +6,7 @@
   
   </div>
   <div class="col-1 my-5 text-right p-0">
-    <a class="btn btn-primary rounded-1  float-right" href="javascript:history.back()"> Add New User</a>
+    <a class="btn btn-primary rounded-1  float-right" href="user/new"> Add New User</a>
   </div>
 </div>
 
@@ -33,7 +33,9 @@
             <td><%=user.passward%></td>
             <td><a class = "btn btn-primary p-1 py-0">show</a></td>
             <td><a class = "btn btn-warning p-1 py-0">edit</a></td>
-            <td><a class = "btn btn-danger p-1 py-0">delete</a></td>
+            <td><%= button_to "Delete",{ action: "destroy", id: user.id },
+                                method: :delete, data: { confirm: "Are you sure?" } ,
+                                class: "btn btn-danger p-1 py-0"%></td>
           </tr>
         </tbody>
       <% end %>

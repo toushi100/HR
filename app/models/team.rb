@@ -4,7 +4,7 @@ class Team < ApplicationRecord
     validates! :members ,presence: true
     validates! :team_lead ,presence: true
 
-    belongs_to :Division
-    has_many :Employees
-    has_many :Targets
+    belongs_to :division
+    has_many :employees
+    has_many :targets
 end
