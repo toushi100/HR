@@ -4,6 +4,6 @@ class Division < ApplicationRecord
     validates! :teams ,presence: true
     validates! :manager ,presence: true
 
-    # has_many :teams
-    # has_one :employee
+    has_many :teams
+    has_one :employee
 end

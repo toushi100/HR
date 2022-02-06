@@ -30,7 +30,7 @@ class TeamController < ApplicationController
 
     respond_to do |format|
       if @team.save
-        format.html { redirect_to user_url(@team), notice: "user was successfully created." }
+        format.html { redirect_to team_path, notice: "user was successfully created." }
         format.json { render :show, status: :created, location: @team }
       else
         format.html { render :new, status: :unprocessable_entity }

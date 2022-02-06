@@ -5,6 +5,6 @@ class Employee < ApplicationRecord
     validates! :salary ,presence: true , numericality: true
     validates! :employee_status ,presence: true
 
-    belongs_to :division
-    belongs_to :team
+    has_one :division
+    has_one :team
 end

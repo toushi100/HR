@@ -50,7 +50,7 @@
             <td><%= tar.description %></td>
             <td> <%= tar.start_date %></td>
             <td> <%= tar.finish_date %> </td>
-            <td> <%= tar.team %> </td>
+            <td> <%= Team.find(tar.team_id).name %> </td>
        
             <td>  <%= tar.status %> </td>
             <td><a class = "btn btn-primary p-1 py-0" href = "target/<%=tar.id%>">Show</a></td>

@@ -14,11 +14,10 @@ class Target < ApplicationRecord
     validates! :start_date ,presence: true
    # validates! :finish_date , comparison: { greater_than: :start_date } , presence: true
     validates_with DateValidator
-    validates! :team ,presence: true
     validates! :status ,presence: true
 
 
-    belongs_to :team
+    has_one :team
 
 end
 

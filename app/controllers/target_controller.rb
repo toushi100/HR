@@ -26,12 +26,16 @@ class TargetController < ApplicationController
 
   def create  
     @target = Target.new#(post_params)
+    # params[:start_date] =  params[:start_date(1i)]+"-"+params[:start_date(2i)]+"-"+params[:start_date(3i)]
+    # params[:finish_date] =  params[:finish_date(1i)]+"-"+params[:finish_date(2i)]+"-"+params[:finish_date(3i)]
+    #p  params[:start_date(1i)]
+    p  params[:finish_date]
     p "---------------------------------CREATE------------------------------"
     @target.title = params[:title]
     @target.description = params[:description]
     @target.start_date = params[:start_date]
     @target.finish_date = params[:finish_date]
-    @target.team = params[:team]
+    @target.team_id = params[:team_id]
     @target.status = params[:status]
     @target.save
     p "---------------------------------CREATED------DONE------------------------"
