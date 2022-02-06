@@ -15,6 +15,10 @@ class EmployeeController < ApplicationController
     @employee = Employee.new
   end
 
+  def show 
+    @employee = Employee.find(params[:id])
+    end
+
   def create  
     @employee = Employee.new#(post_params)
     p "---------------------------------CREATE------------------------------"

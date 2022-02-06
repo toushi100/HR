@@ -11,6 +11,20 @@
 <h1>Employees</h1>
 <div class="container  mt-5 pt-5">
   <div class="row d-flex justify-content-center">
+  <% if @emp.count == 0%>
+  <div class="row">
+  <div class="col-md-6   py-5">
+  <h1 class="fw-bold">Oops . . . </h1>
+  <h3>We couldn't find any records</h3>
+  <h3>please add some</h3>
+  </div>
+  <div class="col-md-6">
+<%= image_tag 'image1.png',class:"w-75"%>
+  
+  </div>
+  </div>
+
+  <% else %>
     <table class="table table-dark">
       <thead>
         <tr>
@@ -32,7 +46,7 @@
             <td> <%= emp.job %> </td>
             <td>  <%= emp.salary %> </td>
             <td>  <%= emp.employee_status %> </td>
-            <td><a class = "btn btn-primary p-1 py-0">show</a></td>
+            <td><a class = "btn btn-primary p-1 py-0" href = "employee/<%=emp.id%>">Show</a></td>
             <td><a class = "btn btn-warning p-1 py-0">edit</a></td>
             <td><%= button_to "Delete",{ action: "destroy", id: emp.id },
                                 method: :delete, data: { confirm: "Are you sure?" } ,
@@ -41,5 +55,6 @@
         </tbody>
       <% end %>
     </table>
+    <% end %>
   </div>
 </div>
