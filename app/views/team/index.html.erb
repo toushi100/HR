@@ -3,17 +3,28 @@
     <a class="btn btn-primary rounded-1" href="javascript:history.back()"> Back</a>
   </div>
   <div class="col-10 my-5 text-right p-0">
-  
   </div>
   <div class="col-1 my-5 text-right p-0">
-    <a class="btn btn-primary rounded-1  float-right" href="javascript:history.back()"> Add New Team</a>
+    <a class="btn btn-primary rounded-1  float-right" href="team/new"> Add New Team</a>
   </div>
 </div>
 <h1>Team</h1>
-
-
 <div class="container  mt-5 pt-5">
   <div class="row d-flex justify-content-center">
+  <% if @team.count == 0%>
+  <div class="row">
+  <div class="col-md-6   py-5">
+  <h1 class="fw-bold">Oops . . . </h1>
+  <h3>We couldn't find any records</h3>
+  <h3>please add some</h3>
+  </div>
+  <div class="col-md-6">
+<%= image_tag 'image1.png',class:"w-75"%>
+  
+  </div>
+  </div>
+
+  <% else %>
     <table class="table table-dark">
       <thead>
         <tr>
@@ -33,14 +44,15 @@
             <td><%= team.description %> </td>
             <td><%= team.members %> </td>
             <td><%= team.team_lead %>  </td>
-            <td><a class = "btn btn-primary p-1 py-0">show</a></td>
+            <td><a class = "btn btn-primary p-1 py-0" href = "team/<%=team.id%>">Show</a></td>
             <td><a class = "btn btn-warning p-1 py-0">edit</a></td>
-            <td><a class = "btn btn-danger p-1 py-0">delete</a></td>
+            <td><%= button_to "Delete",{ action: "destroy", id: team.id },
+                                method: :delete, data: { confirm: "Are you sure?" } ,
+                                class: "btn btn-danger p-1 py-0"%></td>
           </tr>
         </tbody>
       <% end %>
     </table>
+    <%end %>
   </div>
 </div>
-
-

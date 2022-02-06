@@ -7,7 +7,7 @@
   
   </div>
   <div class="col-1 my-5 text-right p-0">
-    <a class="btn btn-primary rounded-1  float-right" href="javascript:history.back()"> Add New Target</a>
+    <a class="btn btn-primary rounded-1  float-right" href="target/new"> Add New Target</a>
   </div>
 </div>
 <h1>Target</h1>
@@ -15,6 +15,20 @@
 
 <div class="container  mt-5 pt-5">
   <div class="row d-flex justify-content-center">
+  <% if @target.count == 0%>
+  <div class="row">
+  <div class="col-md-6   py-5">
+  <h1 class="fw-bold">Oops . . . </h1>
+  <h3>We couldn't find any records</h3>
+  <h3>please add some</h3>
+  </div>
+  <div class="col-md-6">
+<%= image_tag 'image1.png',class:"w-75"%>
+  
+  </div>
+  </div>
+
+  <% else %>
     <table class="table table-dark">
       <thead>
         <tr>
@@ -39,7 +53,7 @@
             <td> <%= tar.team %> </td>
        
             <td>  <%= tar.status %> </td>
-            <td><%= link_to 'Show',false ,class: "btn btn-primary p-1 py-0" %></td>
+            <td><a class = "btn btn-primary p-1 py-0" href = "target/<%=tar.id%>">Show</a></td>
             <td><a class = "btn btn-warning p-1 py-0">edit</a></td>
             <td><%= button_to "Delete",{ action: "destroy", id: tar.id },
                                 method: :delete, data: { confirm: "Are you sure?" } ,
@@ -48,5 +62,6 @@
         </tbody>
       <% end %>
     </table>
+    <% end %>
   </div>
 </div>
