@@ -23,10 +23,13 @@ class TeamController < ApplicationController
     p "---------------------------------CREATE------------------------------"
     @team.name = params[:name]
     @team.description = params[:description]
-    @team.members = params[:members]
     @team.team_lead = params[:team_lead]
+    @team.divisions_id = params[:divisions_id]
     @team.save
     p "---------------------------------CREATED------DONE------------------------"
+    @teamn = Team.last
+    @teamn.members = Employee.where(teams_id:@teamn.id).name
+    @team.save
 
     respond_to do |format|
       if @team.save
