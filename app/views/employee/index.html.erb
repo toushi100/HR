@@ -34,6 +34,7 @@
           <th scope="col">Job</th>
           <th scope="col">Salary</th>
           <th scope="col">Status</th>
+          <th scope="col">Team</th>
           <th class = "text-center"scope="col">Links</th>
         </tr>
       </thead>
@@ -46,6 +47,7 @@
             <td> <%= emp.job %> </td>
             <td>  <%= emp.salary %> </td>
             <td>  <%= emp.employee_status %> </td>
+            <td>  <%=Team.find(emp.teams_id).name%> </td>
             <td><a class = "btn btn-primary p-1 py-0" href = "employee/<%=emp.id%>">Show</a></td>
             <td><a class = "btn btn-warning p-1 py-0">edit</a></td>
             <td><%= button_to "Delete",{ action: "destroy", id: emp.id },
