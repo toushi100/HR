@@ -10,15 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_02_06_165827) do
+ActiveRecord::Schema.define(version: 2022_02_08_184816) do
 
   create_table "divisions", force: :cascade do |t|
     t.string "name"
     t.string "description"
-    t.string "teams"
     t.string "manager"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "employees_id"
+    t.index ["employees_id"], name: "index_divisions_on_employees_id"
   end
 
   create_table "employees", force: :cascade do |t|
@@ -29,6 +30,8 @@ ActiveRecord::Schema.define(version: 2022_02_06_165827) do
     t.string "employee_status"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "teams_id"
+    t.index ["teams_id"], name: "index_employees_on_teams_id"
   end
 
   create_table "targets", force: :cascade do |t|
@@ -46,10 +49,12 @@ ActiveRecord::Schema.define(version: 2022_02_06_165827) do
   create_table "teams", force: :cascade do |t|
     t.string "name"
     t.string "description"
-    t.string "members"
+    t.text "members"
     t.string "team_lead"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "divisions_id"
+    t.index ["divisions_id"], name: "index_teams_on_divisions_id"
   end
 
   create_table "users", force: :cascade do |t|
