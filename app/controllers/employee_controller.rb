@@ -27,12 +27,14 @@ class EmployeeController < ApplicationController
      @employee.job = params[:job]
      @employee.salary = params[:salary]
      @employee.employee_status = params[:employee_status]
+     @employee.teams_id = params[:teams_id]
+     
      @employee.save
     p "---------------------------------CREATED------DONE------------------------"
 
    respond_to do |format|
      if @employee.save
-       format.html { redirect_to user_url(@employee), notice: "user was successfully created." }
+       format.html { redirect_to employee_path, notice: "user was successfully created." }
        format.json { render :show, status: :created, location: @employee }
      else
        format.html { render :new, status: :unprocessable_entity }

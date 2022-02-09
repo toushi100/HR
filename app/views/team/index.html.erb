@@ -33,6 +33,7 @@
           <th scope="col">Description</th>
           <th scope="col">Members</th>
           <th scope="col">Team Lead</th>
+          <th scope="col">Division</th>
           <th class = "text-center"scope="col">Links</th>
         </tr>
       </thead>
@@ -42,8 +43,9 @@
             <td><%= team.id %></td>
             <td><%=team.name%></td>
             <td><%= team.description %> </td>
-            <td><%= team.members %> </td>
+            <td><% for i in Employee.where(teams_id:team.id)%><%=i.name%></br><%end%></td>
             <td><%= team.team_lead %>  </td>
+            <td><%= team.divisions_id %>  </td>
             <td><a class = "btn btn-primary p-1 py-0" href = "team/<%=team.id%>">Show</a></td>
             <td><a class = "btn btn-warning p-1 py-0">edit</a></td>
             <td><%= button_to "Delete",{ action: "destroy", id: team.id },
