@@ -21,8 +21,9 @@ class DivisionController < ApplicationController
     p "---------------------------------CREATE------------------------------"
     @div.name = params[:name]
     @div.description = params[:description]
-    @div.teams = params[:teams]
-    @div.manager = params[:manager]
+    @div.manager = Employee.find(params[:employees_id]).name
+    @div.employees_id = params[:employees_id]    
+    
     @div.save
     p "---------------------------------CREATED------DONE------------------------"
 

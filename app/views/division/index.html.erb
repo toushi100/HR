@@ -42,7 +42,7 @@
             <td><%= div.id %></td>
             <td><%= div.name %> </td>
             <td><%= div.description %> </td>
-            <td><%=div.teams%></td>
+            <td><% for i in Team.where(divisions_id:div.id)%><%=i.name%></br><%end%></td>
             <td><%= div.manager %> </td>
             <td><a class = "btn btn-primary p-1 py-0" href = "division/<%=div.id%>">Show</a></td>
             <td><a class = "btn btn-warning p-1 py-0">edit</a></td>
