@@ -21,17 +21,13 @@ class EmployeeController < ApplicationController
 
   def create  
     @employee = Employee.new#(post_params)
-    p "---------------------------------CREATE------------------------------"
     @employee.name = params[:name]
      @employee.email = params[:email]
      @employee.job = params[:job]
      @employee.salary = params[:salary]
      @employee.employee_status = params[:employee_status]
      @employee.teams_id = params[:teams_id]
-     
      @employee.save
-    p "---------------------------------CREATED------DONE------------------------"
-
    respond_to do |format|
      if @employee.save
        format.html { redirect_to employee_path, notice: "user was successfully created." }
@@ -43,5 +39,23 @@ class EmployeeController < ApplicationController
      end
    end
  end
+ def edit
+  @emp = Employee.find(params[:id])
+end
+
+  def update
+      @emp = Employee.find(params[:id])
+      if @emp.update(user_params)
+        redirect_to "/employee/#{@emp.id}" 
+      else
+        p"bad"
+      end
+  end
+
+  private
+  def user_params
+    params.require(:employee).permit(:name,:email,:job,:salary,:employee_status,:teams_id)
+  end
+
 
 end
