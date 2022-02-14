@@ -27,6 +27,23 @@ Rails.application.routes.draw do
   post 'target/create', to: 'target#create' # new
 
 
+  post 'user/:id/update', to: 'user#update' # new
+  post 'user.:id/', to: 'user#update' # new
+  post 'employee/:id/update', to: 'employee#update' # new
+  post 'division/:id/update', to: 'division#update' # new
+  post 'team/:id/update', to: 'team#update' # new
+  post 'target/:id/update', to: 'target#update' # new
+
+
+  get 'user/:id/edit' ,to:"user#edit"
+  get 'employee/:id/edit' ,to:"employee#edit"
+  get 'division/:id/edit' ,to:"division#edit"
+  get 'target/:id/edit' ,to:"target#edit"
+  get 'team/:id/edit' ,to:"team#edit"
+
+
+
+
   get 'user/:id' ,to:"user#show"
   get 'employee/:id' ,to:"employee#show"
   get 'division/:id' ,to:"division#show"
