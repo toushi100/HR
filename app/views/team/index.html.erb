@@ -47,7 +47,7 @@
             <td><%= team.team_lead %>  </td>
             <td><%= team.divisions_id %>  </td>
             <td><a class = "btn btn-primary p-1 py-0" href = "team/<%=team.id%>">Show</a></td>
-            <td><a class = "btn btn-warning p-1 py-0">edit</a></td>
+            <td><a class = "btn btn-warning p-1 py-0" href = "team/<%=team.id%>/edit">edit</a></td>
             <td><%= button_to "Delete",{ action: "destroy", id: team.id },
                                 method: :delete, data: { confirm: "Are you sure?" } ,
                                 class: "btn btn-danger p-1 py-0"%></td>
