@@ -54,7 +54,7 @@
        
             <td>  <%= tar.status %> </td>
             <td><a class = "btn btn-primary p-1 py-0" href = "target/<%=tar.id%>">Show</a></td>
-            <td><a class = "btn btn-warning p-1 py-0">edit</a></td>
+            <td><a class = "btn btn-warning p-1 py-0"href = "target/<%=tar.id%>/edit">edit</a></td>
             <td><%= button_to "Delete",{ action: "destroy", id: tar.id },
                                 method: :delete, data: { confirm: "Are you sure?" } ,
                                 class: "btn btn-danger p-1 py-0"%></td>

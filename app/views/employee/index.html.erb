@@ -47,9 +47,9 @@
             <td> <%= emp.job %> </td>
             <td>  <%= emp.salary %> </td>
             <td>  <%= emp.employee_status %> </td>
-            <td>  <%=Team.find(emp.teams_id).name%> </td>
+            <td>   </td>
             <td><a class = "btn btn-primary p-1 py-0" href = "employee/<%=emp.id%>">Show</a></td>
-            <td><a class = "btn btn-warning p-1 py-0">edit</a></td>
+            <td><a class = "btn btn-warning p-1 py-0"href = "employee/<%=emp.id%>/edit">edit</a></td>
             <td><%= button_to "Delete",{ action: "destroy", id: emp.id },
                                 method: :delete, data: { confirm: "Are you sure?" } ,
                                 class: "btn btn-danger p-1 py-0"%></td>

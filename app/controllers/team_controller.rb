@@ -41,5 +41,22 @@ class TeamController < ApplicationController
       end
     end
   end
+  def edit
+    @team = Team.find(params[:id])
+  end
+  
+    def update
+        @team = Team.find(params[:id])
+        if @team.update(user_params)
+          redirect_to "/team/#{@team.id}" 
+        else
+          p"bad"
+        end
+    end
+  
+    private
+    def user_params
+      params.require(:team).permit(:name,:description,:team_lead,:divisions_id)
+    end
 
 end

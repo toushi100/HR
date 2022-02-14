@@ -50,5 +50,24 @@ class TargetController < ApplicationController
       end
     end
   end
+
+  def edit
+    @target = Target.find(params[:id])
+  end
+  
+    def update
+        @target = Target.find(params[:id])
+        if @target.update(user_params)
+          redirect_to "/employee/#{@target.id}" 
+        else
+          p"bad"
+        end
+    end
+  
+    private
+    def user_params
+      params.require(:target).permit(:title,:description,:start_date,:finish_date,:team_id,:status)
+    end
+  
  
 end

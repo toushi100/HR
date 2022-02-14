@@ -8,6 +8,7 @@
     <a class="btn btn-primary rounded-1  float-right" href="user/new"> Add New User</a>
   </div>
 </div>
+<div id="popup"></div>
 <h1>User</h1>
 <div class="container  mt-5 pt-5">
   <div class="row d-flex justify-content-center">
@@ -41,7 +42,7 @@
               <td onclick="pass<%=user.id%>()"><%=user.email%></td>
               <td  id="<%=user.id%>" style="visibility:hidden"> <%=user.passward%> </td>
               <td><a class = "btn btn-primary p-1 py-0" href = "user/<%=user.id%>">Show</a></td>
-              <td><a class = "btn btn-warning p-1 py-0" href = "user/<%=user.id%>">Edit</a></td>
+              <td><a class = "btn btn-warning p-1 py-0" href = "user/<%=user.id%>/edit">Edit</a></td>
               <td><%= button_to "Delete",{ action: "destroy", id: user.id },
                                 method: :delete, data: { confirm: "Are you sure?" } ,
                                 class: "btn btn-danger p-1 py-0"%></td>
