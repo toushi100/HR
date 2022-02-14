@@ -38,6 +38,23 @@ class DivisionController < ApplicationController
     end
   end
 
+  def edit
+    @div = Division.find(params[:id])
+  end
+  
+    def update
+        @div = Division.find(params[:id])
+        if @div.update(user_params)
+          redirect_to "/division/#{@div.id}" 
+        else
+          p"bad"
+        end
+    end
+
+    private
+    def user_params
+      params.require(:division).permit(:name,:description,:manager,:employees_id)
+    end
 
 
 end
