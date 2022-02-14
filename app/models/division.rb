@@ -4,6 +4,6 @@ class Division < ApplicationRecord
     # validates! :teams ,presence: true
     validates! :manager ,presence: true
 
-    has_many :teams
+    has_many :teams , dependent: :destroy ,class_name: "Team", foreign_key: "divisions_id"
     has_one :employee
 end
