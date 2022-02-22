@@ -21,13 +21,13 @@ class UserController < ApplicationController
      p "---------------------------------CREATE------------------------------"
      @user.name = params[:name]
       @user.email = params[:email]
-      @user.passward = params[:passward]
+      @user.password = params[:passward]
       @user.save
      p "---------------------------------CREATED------DONE------------------------"
 
     respond_to do |format|
       if @user.save
-        format.html { redirect_to user_url(@user), notice: "user was successfully created." }
+        format.html { redirect_to user_path, notice: "user was successfully created." }
         format.json { render :show, status: :created, location: @user }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -59,7 +59,7 @@ end
 
     # Only allow a list of trusted parameters through.
     def user_params
-      params.require(:user).permit(:name,:email,:passward)
+      params.require(:user).permit(:name)
     end
 
 end
