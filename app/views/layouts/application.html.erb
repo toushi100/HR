@@ -16,8 +16,13 @@
   <header class="mb-auto">
     <div>
       <a class="text-white" href="/"><h3 class="float-md-start mb-0">HR</h3></a>
-      <nav class="nav nav-masthead justify-content-center float-md-end">
-
+      <nav class="nav nav-masthead justify-content-right float-md-end">
+      <% if user_signed_in?%>
+<a href="users/sign_out" class="btn btn-primary mx-2">Sign out </a>
+<%else%>       
+<a href="users/sign_in" class="btn btn-primary mx-2">Sign in </a>
+        <a href="users/sign_up" class="btn btn-primary mx-2">Sign up </a>
+        <%end%> 
       </nav>
     </div>
   </header>
