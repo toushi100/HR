@@ -7,9 +7,9 @@ Video link : https://drive.google.com/file/d/1e5I4BJpuH2pQ-jjl10aT6w0W63AxsSwl/v
  S_ACTION MODELS_01: HR Employee Admin Project
  Video link : https://drive.google.com/file/d/12_CO3XOZYq3nux5OJ5iDa3ZA8dlPcTA1/view?usp=sharing
 
- User now can register and and sign in and an avatar photo for their profile
- Teams now show their members and team lead
- new users get sent a welcome email with their account information
+  - User now can register and and sign in and an avatar photo for their profile
+  - Teams now show their members and team lead
+  - New users get sent a welcome email with their account information
 
 <img src="https://github.com/toushi100/HR/blob/development/Screenshots/Screenshot from 2022-02-22 13-27-39.png" width=50%/>
 <img src="https://github.com/toushi100/HR/blob/development/Screenshots/Screenshot from 2022-02-22 13-27-56.png" width=50%/>
