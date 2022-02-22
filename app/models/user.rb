@@ -6,8 +6,15 @@ class User < ApplicationRecord
     # validates! :name, length: { maximum: 15} ,presence: true
     # validates! :email,:uniqueness => {:case_sensitive => false} ,presence: true
     # validates! :passward,presence: true
+    after_create do |job|
+      mailer(self)
+    end
+    def mailer(user)
+      p"============================#{user}===================="
+      WelcoomeMailer.with(user: user).welcome_mail(user.id).deliver_now
+    end
 
-
+   
 end
 
 # user = User.new
