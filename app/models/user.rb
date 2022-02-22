@@ -14,7 +14,7 @@ class User < ApplicationRecord
       WelcoomeMailer.with(user: user).welcome_mail(user.id).deliver_now
     end
 
-   
+    has_one_attached :avatar
 end
 
 # user = User.new
