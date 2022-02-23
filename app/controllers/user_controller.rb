@@ -1,4 +1,6 @@
 class UserController < ApplicationController
+  before_action :authenticate_user!
+
   def index
     @some = "this is the variable"
     @user = User.all
