@@ -1,0 +1,60 @@
+<div class = "row">
+  <div class="col-1 my-5 text-left">
+    <a class="btn btn-primary rounded-1" href="javascript:history.back()"> Back</a>
+  </div>
+  <div class="col-10 my-5 text-right p-0">
+  </div>
+  <div class="col-1 my-5 text-right p-0">
+    <a class="btn btn-primary rounded-1  float-right" href="team/new"> Add New Team</a>
+  </div>
+</div>
+<h1>Team</h1>
+<div class="container  mt-5 pt-5">
+  <div class="row d-flex justify-content-center">
+  <% if @team.count == 0%>
+  <div class="row">
+  <div class="col-md-6   py-5">
+  <h1 class="fw-bold">Oops . . . </h1>
+  <h3>We couldn't find any records</h3>
+  <h3>please add some</h3>
+  </div>
+  <div class="col-md-6">
+<%= image_tag 'image1.png',class:"w-75"%>
+  
+  </div>
+  </div>
+
+  <% else %>
+    <table class="table table-dark">
+      <thead>
+        <tr>
+          <th scope="col">ID</th>
+          <th scope="col">Name</th>
+          <th scope="col">Description</th>
+          <th scope="col">Members</th>
+          <th scope="col">Team Lead</th>
+          <th scope="col">Division</th>
+          <th class = "text-center"scope="col">Links</th>
+        </tr>
+      </thead>
+      <% for team in @team%>
+        <tbody>
+          <tr>
+            <td><%= team.id %></td>
+            <td><%=team.name%></td>
+            <td><%= team.description %> </td>
+            <td><% for i in Employee.where(teams_id:team.id)%><%=i.name%></br><%end%></td>
+            <td><%= Employee.where(id:team.team_lead)[0].name %>  </td>
+            <td><%= Division.where(id:team.divisions_id)[0].name %>  </td>
+            <td><a class = "btn btn-primary p-1 py-0" href = "team/<%=team.id%>">Show</a></td>
+            <td><a class = "btn btn-warning p-1 py-0" href = "team/<%=team.id%>/edit">edit</a></td>
+            <td><%= button_to "Delete",{ action: "destroy", id: team.id },
+                                method: :delete, data: { confirm: "Are you sure?" } ,
+                                class: "btn btn-danger p-1 py-0"%></td>
+          </tr>
+        </tbody>
+      <% end %>
+    </table>
+    <%end %>
+  </div>
+</div>

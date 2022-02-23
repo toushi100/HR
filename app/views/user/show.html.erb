@@ -1,0 +1,9 @@
+<div class="p-5 m-5">
+<%if @user.avatar.representable?%>
+<%= image_tag @user.avatar ,class:"w-25"%>
+<%end%>
+  <h1 > User's name : <%=@user.name%> </h1>
+  <h3 > User's ID : <%=@user.id%> </h3>
+  <h3 > User's Email : <%=@user.email%> </h3>
+  <h3 > User's password : <%=@user.password%> </h3>
+</div>
