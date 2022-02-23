@@ -28,7 +28,7 @@
   <div class="row my-5">
     <div class="form-group m-0 col-md-6">
       <%= form.label :manager , class:"text-left"%>
-      <%= form.select :employees_id, Employee.all.collect { |p| [ p.name, p.id ] } %>
+      <%= form.select :employees_id, Employee.all.collect { |p| [ p.name, p.id ] } ,{},{class:"form-control "}%>
     </div>
   </div>
     
