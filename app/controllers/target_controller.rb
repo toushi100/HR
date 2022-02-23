@@ -1,4 +1,6 @@
 class TargetController < ApplicationController
+  before_action :authenticate_user!
+
   def index
   @target = Target.all
 
