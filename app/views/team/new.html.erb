@@ -25,13 +25,13 @@
     </div>
   </div>
   <div class="row my-5">
-    <div class="form-group m-0 col-md-6">
+    <div class="form-group  m-0 col-md-6">
       <%= form.label :team_lead , class:"text-left"%>
-      <%= form.select :team_lead,Employee.all.collect { |p| [ p.name, p.id ] } %>
+      <%= form.select :team_lead,Employee.all.collect { |p| [ p.name, p.id ] },{},{class:"form-control "} %>
     </div>
    <div class="form-group m-0 col-md-6">
       <%= form.label :divisions_id , class:"text-left"%>
-      <%= form.select :divisions_id, Division.all.collect { |p| [ p.name, p.id ] } %>
+      <%= form.select :divisions_id, Division.all.collect { |p| [ p.name, p.id ] },{},{class:"form-control"} %>
     </div>
   </div>
   

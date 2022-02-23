@@ -3,5 +3,5 @@
   <h3 > Teams's ID : <%=@team.id%> </h3>
   <h3 > Teams's Description : <%=@team.description%> </h3>
   <h3 > Teams's Members : <% for i in Employee.where(teams_id:@team.id)%><%=i.name%>  <%end%> </h3>
-  <h3 > Teams's Team Lead : <%= Employee.find(@team.team_lead).name%> </h3>
+  <h3 > Teams's Team Lead : <%= Employee.where(@team.team_lead)[0].name%> </h3>
 </div>

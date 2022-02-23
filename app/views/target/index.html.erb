@@ -45,12 +45,20 @@
       <% for tar in @target%>
         <tbody>
           <tr>
+           <% @team =  Team.where(id: tar.team_id) %>
             <td><%= tar.id %></td>
             <td><%= tar.title %> </td>
             <td><%= tar.description %></td>
             <td> <%= tar.start_date %></td>
             <td> <%= tar.finish_date %> </td>
-            <td> <%= Team.find(tar.team_id).name %> </td>
+            <td> 
+            <% @team = Team.where(id: tar.team_id) %> 
+            <% unless @team.length == 0 %>
+            <%= @team[0].name %> 
+            <%else%>
+            No Team is assigned 
+            <%end%>
+            </td>
        
             <td>  <%= tar.status %> </td>
             <td><a class = "btn btn-primary p-1 py-0" href = "target/<%=tar.id%>">Show</a></td>

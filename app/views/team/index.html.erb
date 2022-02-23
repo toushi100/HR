@@ -44,8 +44,8 @@
             <td><%=team.name%></td>
             <td><%= team.description %> </td>
             <td><% for i in Employee.where(teams_id:team.id)%><%=i.name%></br><%end%></td>
-            <td><%= team.team_lead %>  </td>
-            <td><%= team.divisions_id %>  </td>
+            <td><%= Employee.where(id:team.team_lead)[0].name %>  </td>
+            <td><%= Division.where(id:team.divisions_id)[0].name %>  </td>
             <td><a class = "btn btn-primary p-1 py-0" href = "team/<%=team.id%>">Show</a></td>
             <td><a class = "btn btn-warning p-1 py-0" href = "team/<%=team.id%>/edit">edit</a></td>
             <td><%= button_to "Delete",{ action: "destroy", id: team.id },

@@ -36,7 +36,7 @@
     </div>
     <div class="form-group m-0 col-md-6">
       <%= form.label :teams_id , class:"text-left"%>
-      <%= form.select :teams_id, Team.all.collect { |p| [ p.name, p.id ] } %>
+      <%= form.select :teams_id, Team.all.collect { |p| [ p.name, p.id ] },{},{class:"form-control "} %>
     </div>
   </div>
   <div class="row my-5">
