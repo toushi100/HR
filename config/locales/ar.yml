@@ -1,35 +1,151 @@
-# Files in the config/locales directory are used for internationalization
-# and are automatically loaded by Rails. If you want to use locales other
-# than English, add the necessary files in this directory.
-#
-# To use the locales, use `I18n.t`:
-#
-#     I18n.t "hello"
-#
-# In views, this is aliased to just `t`:
-#
-#     <%= t("hello") %>
-#
-# To use a different locale, set it with `I18n.locale`:
-#
-#     I18n.locale = :es
-#
-# This would use the information in config/locales/es.yml.
-#
-# The following keys must be escaped otherwise they will not be retrieved by
-# the default I18n backend:
-#
-# true, false, on, off, yes, no
-#
-# Instead, surround them with single quotes.
-#
-# en:
-#   "true": "foo"
-#
-# To learn more, please read the Rails Internationalization guide
-# available at https://guides.rubyonrails.org/i18n.html.
 
 ar:
+  users:
+    index:
+      users: "المستخدمون"
+      ID: "الهوية شخصية"
+      Name: "الاسم"
+      Email: "البريد الالكتروني"
+      Password: "كلمة المرور"
+      Links: "الروابط"
+  team:
+    index:
+      teams: "الفرق"
+      name: "الاسم"
+      description: "الوصف"
+      team_lead: "قائد الفريق"
+      divisions_id: "القسم"
+      members: "الأعضاء"
+      id: "الهوية شخصية"
+      Links: "الروابط"
+    show:
+      name: "الاسم"
+      description: "الوصف"
+      team_lead: "قائد الفريق"
+      divisions_id: "القسم"
+      members: "الأعضاء"
+      id: "الهوية شخصية"
+  division:
+    index:
+      division: "القسم"
+      id: "الهوية شخصية"
+      name: "الاسم"
+      description: "الوصف"
+      teams: "الفرق"
+      manager: "المدير"
+      links: "الروابط"
+    show:
+      division: "القسم"
+      id: "الهوية شخصية"
+      name: "الاسم"
+      description: "الوصف"
+      teams: "الفرق"
+      manager: "المدير"
+      links: "الروابط"
+  target:
+    index:
+      target: الأهداف
+      title: "اللقب"
+      id: "الهوية شخصية"
+      description: "الوصف"
+      start: "تاريخ البدء"
+      finish: "تاريخ الانتهاء"
+      team: "الفريق"
+      status: الحالة
+      links: الروابط
+    show:
+      target: الأهداف
+      title: "اللقب"
+      id: "الهوية شخصية"
+      description: "الوصف"
+      start: "تاريخ البدء"
+      finish: "تاريخ الانتهاء"
+      team: "الفريق"
+      status: الحالة
+      links: الروابط
+  employee:
+    index:
+      emp: الموظفين
+      id: الهوية شخصية
+      name: الاسم
+      email: البريد الالكتروني
+      job: الوظيفة
+      salary: الراتب
+      status: الحالة
+      team_id: الفريق
+      links: الروابط
+    show:
+      emp: الموظفين
+      id: الهوية شخصية
+      name: الاسم
+      email: البريد الالكتروني
+      job: الوظيفة
+      salary: الراتب
+      status: الحالة
+      team_id: الفريق
+      links: الروابط
+  activerecord:
+    attributes:
+      user:
+        id: "الهوية شخصية"
+        name: "الاسم"
+        email: "البريد الالكتروني"
+        password: "كلمة المرور"
+        password_confirmation: "تأكيد كلمة المرور "
+        avatar: "الصورة الرمزية"
+      team:
+        name: "الاسم"
+        description: "الوصف"
+        team_lead: "الفريق lead"
+        divisions_id: "القسم"
+      division:
+        name: "الاسم"
+        description: "الوصف"
+        manager: "المدير" 
+      target:
+        title: "اللقب"
+        description: "الوصف"
+        start: "تاريخ البدء"
+        finish: "تاريخ الانتهاء"
+        team: "الفريق"
+        status: الحالة
+      employee:
+        name: الاسم
+        email: البريد الالكتروني
+        job: الوظيفة
+        salary: الراتب
+        status: الحالة
+        teams_id: الفريق
+      
+
+  button:
+    back: للخلف
+    signin: تسجيل الدخول
+    signup: الاشتراك
+    signout: الخروج
+    delete: حذف
+    submit: التأكيد
+    show: عرض
+    edit: تحرير
+    newdiv: إضافة قسم جديد
+    newuser: إضافة مستخدم جديد
+    newemp: اضافة موظف جديد
+    newtar: إضافة هدف جديد
+    newteam: اضافة فريق جديد
+
+
+
+
+
+
+
+
+
+
+
+
+
+
   devise:
     confirmations:
       confirmed: "تم تأكيد عنوان بريدك الإلكتروني بنجاح"
