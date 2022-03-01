@@ -30,6 +30,10 @@
         <%= yield %>
       </main>
       <footer class="mt-auto ">
+        <div class="position-absolute  bottom-0" >
+          <a href="?locale=en"><%= image_tag 'en.svg.png',style:"max-width:30px;"%></a>
+          <a href="?locale=ar"><%= image_tag 'ar.svg.png',style:"max-width:30px;"%></a>
+        </div>
       </footer>
     </div>
   </body>
