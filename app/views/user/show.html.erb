@@ -2,8 +2,8 @@
 <%if @user.avatar.representable?%>
 <%= image_tag @user.avatar ,class:"w-25"%>
 <%end%>
-  <h1 > User's name : <%=@user.name%> </h1>
-  <h3 > User's ID : <%=@user.id%> </h3>
-  <h3 > User's Email : <%=@user.email%> </h3>
-  <h3 > User's password : <%=@user.password%> </h3>
+  <h1 > <%= t 'users.index.Name' %> : <%=@user.name%> </h1>
+  <h3 > <%= t 'users.index.ID' %>: <%=@user.id%> </h3>
+  <h3 > <%= t 'users.index.Email' %> : <%=@user.email%> </h3>
+  <h3 > <%= t 'users.index.Password' %>: <%=@user.password%> </h3>
 </div>
