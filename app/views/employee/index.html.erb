@@ -1,14 +1,14 @@
 <div class = "row">
   <div class="col-1 my-5 text-left">
-    <a class="btn btn-primary rounded-1" href="javascript:history.back()"> Back</a>
+    <a class="btn btn-primary rounded-1" href="javascript:history.back()"> <%= t'button.back'%></a>
   </div>
   <div class="col-10 my-5 text-right p-0">
   </div>
   <div class="col-1 my-5 text-right p-0">
-    <a class="btn btn-primary rounded-1  float-right" href="employee/new"> Add New Employee</a>
+    <a class="btn btn-primary rounded-1  float-right" href="employee/new"> <%= t'button.newemp'%></a>
   </div>
 </div>
-<h1>Employees</h1>
+<h1><%= t'employee.index.emp'%></h1>
 <div class="container  mt-5 pt-5">
   <div class="row d-flex justify-content-center">
   <% if @emp.count == 0%>
@@ -28,14 +28,14 @@
     <table class="table table-dark">
       <thead>
         <tr>
-          <th scope="col">ID</th>
-          <th scope="col">Name</th>
-          <th scope="col">Email</th>
-          <th scope="col">Job</th>
-          <th scope="col">Salary</th>
-          <th scope="col">Status</th>
-          <th scope="col">Team</th>
-          <th class = "text-center"scope="col">Links</th>
+          <th scope="col"><%= t'employee.index.id'%></th>
+          <th scope="col"><%= t'employee.index.name'%></th>
+          <th scope="col"><%= t'employee.index.email'%></th>
+          <th scope="col"><%= t'employee.index.job'%></th>
+          <th scope="col"><%= t'employee.index.salary'%></th>
+          <th scope="col"><%= t'employee.index.status'%></th>
+          <th scope="col"><%= t'employee.index.team_id'%></th>
+          <th class = "text-center"scope="col"><%= t'employee.index.links'%></th>
         </tr>
       </thead>
       <% for emp in @emp%>
@@ -48,9 +48,9 @@
             <td>  <%= emp.salary %> </td>
             <td>  <%= emp.employee_status %> </td>
             <td>   <% for i in Team.where(id:emp.teams_id)%><%=i.name%></br><%end%></td>
-            <td><a class = "btn btn-primary p-1 py-0" href = "employee/<%=emp.id%>">Show</a></td>
-            <td><a class = "btn btn-warning p-1 py-0"href = "employee/<%=emp.id%>/edit">edit</a></td>
-            <td><%= button_to "Delete",{ action: "destroy", id: emp.id },
+            <td><a class = "btn btn-primary p-1 py-0" href = "employee/<%=emp.id%>"><%= t'button.show'%></</a></td>
+            <td><a class = "btn btn-warning p-1 py-0"href = "employee/<%=emp.id%>/edit"><%= t'button.edit'%></a></td>
+            <td><%= button_to I18n.t('button.delete'),{ action: "destroy", id: emp.id },
                                 method: :delete, data: { confirm: "Are you sure?" } ,
                                 class: "btn btn-danger p-1 py-0"%></td>
           </tr>
