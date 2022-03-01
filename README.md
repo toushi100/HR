@@ -19,3 +19,5 @@ Video link : https://drive.google.com/file/d/1e5I4BJpuH2pQ-jjl10aT6w0W63AxsSwl/v
 <img src="https://github.com/toushi100/HR/blob/development/Screenshots/Screenshot from 2022-02-22 13-29-19.png" width=50%/>
 <img src="https://github.com/toushi100/HR/blob/development/Screenshots/Screenshot from 2022-02-22 13-29-33.png" width=50%/>
 <img src="https://github.com/toushi100/HR/blob/development/Screenshots/Screenshot from 2022-02-22 13-30-36.png" width=50%/>
+<img src="https://github.com/toushi100/HR/tree/adding-translation/Screenshots/Screenshot from 2022-03-01 17-19-48.png" width=50%/>
+<img src="https://github.com/toushi100/HR/tree/adding-translation/Screenshots/Screenshot from 2022-03-01 17-19-54.png" width=50%/>
