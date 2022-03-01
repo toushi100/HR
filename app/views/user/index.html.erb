@@ -1,15 +1,15 @@
 <div class = "row">
   <div class="col-1 my-5 text-left">
-    <a class="btn btn-primary rounded-1" href="javascript:history.back()"> Back</a>
+    <a class="btn btn-primary rounded-1" href="javascript:history.back()"> <%= t'button.back'%></a>
   </div>
   <div class="col-10 my-5 text-right p-0">
   </div>
   <div class="col-1 my-5 text-right p-0">
-    <a class="btn btn-primary rounded-1  float-right" href="user/new"> Add New User</a>
+    <a class="btn btn-primary rounded-1  float-right" href="user/new"> <%= t'button.newuser'%></a>
   </div>
 </div>
 <div id="popup"></div>
-<h1>User</h1>
+<h1><%= t 'users.index.users' %></h1>
 <div class="container  mt-5 pt-5">
   <div class="row d-flex justify-content-center">
     <% if @user.count == 0%>
@@ -27,11 +27,11 @@
       <table class="table table-dark">
         <thead>
           <tr>
-            <th scope="col">ID</th>
-            <th scope="col">Name</th>
-            <th scope="col">Email</th>
-            <th scope="col">Password</th>
-            <th class = "text-center"scope="col">Links</th>
+            <th scope="col"><%= t 'users.index.ID' %></th>
+            <th scope="col"><%= t 'users.index.Name' %></th>
+            <th scope="col"><%= t 'users.index.Email' %></th>
+            <th scope="col"><%= t 'users.index.Password' %></th>
+            <th class = "text-center"scope="col"><%= t 'users.index.Links' %></th>
           </tr>
         </thead>
         <% @user.each do |user| %>
@@ -41,23 +41,14 @@
               <td><%=user.name%></td>
               <td onclick="pass<%=user.id%>()"><%=user.email%></td>
               <td  id="<%=user.id%>" style="visibility:hidden"> <%=user.password%> </td>
-              <td><a class = "btn btn-primary p-1 py-0" href = "user/<%=user.id%>">Show</a></td>
-              <td><a class = "btn btn-warning p-1 py-0" href = "user/<%=user.id%>/edit">Edit</a></td>
-              <td><%= button_to "Delete",{ action: "destroy", id: user.id },
+              <td><a class = "btn btn-primary p-1 py-0" href = "user/<%=user.id%>"><%= t'button.show'%></a></td>
+              <td><a class = "btn btn-warning p-1 py-0" href = "user/<%=user.id%>/edit"><%= t'button.edit'%></a></td>
+              <td><%= button_to I18n.t('button.delete'),{ action: "destroy", id: user.id },
                                 method: :delete, data: { confirm: "Are you sure?" } ,
                                 class: "btn btn-danger p-1 py-0"%></td>
             </tr>
           </tbody>
-          <script language="JavaScript" type="text/javascript">
-            function pass<%=user.id%>() {
-              var x = document.getElementById("<%=user.id%>");
-              if (x.style.visibility === "hidden") {
-                x.style.visibility = "visible";
-              } else {
-                x.style.visibility = "hidden";
-              }
-            }
-          </script>
+          
         <% end %>
       </table>
     <% end %>

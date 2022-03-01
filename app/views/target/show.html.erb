@@ -1,9 +1,14 @@
 
 <div class="p-5 m-5">
-  <h1 > Target's Title : <%=@target.title%> </h1>
-  <h3 > Target's ID : <%=@target.id%> </h3>
-  <h3 > Target's Start Date : <%=@target.start_date%> </h3>
-    <h3 > Target's Finish Date : <%=@target.finish_date%> </h3>
-  <h3 > Target's Team :            </br>Team ID : <%=@target.team_id%> </h3>
-  <h3 > Target's Status : <%=@target.status%> </h3>
+  <h1 > <%= t'target.show.title'%> : <%=@target.title%> </h1>
+  <h3 > <%= t'target.show.id'%> : <%=@target.id%> </h3>
+  <h3 > <%= t'target.show.description'%>: <%=@target.description%> </h3>
+  <h3 > <%= t'target.show.start'%> : <%=@target.start_date%> </h3>
+  <h3 > <%= t'target.show.finish'%> : <%=@target.finish_date%> </h3>
+  <h3 > <%= t'target.show.team'%> :  <%if Team.where(id: @target.team_id).count == 0%> 
+  No teams
+  <%else%>
+  <%=Team.where(id: @target.team_id)[0].name%>
+  <%end%></h3>
+  <h3 > <%= t'target.show.status'%> : <%=@target.status%> </h3>
 </div>

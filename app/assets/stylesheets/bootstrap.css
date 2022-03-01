@@ -11269,3 +11269,5 @@ textarea.form-control-lg {
 
 a{text-decoration: none}
 
+@import url(https://fonts.googleapis.com/earlyaccess/lateef.css);
+.arabic{font-family: 'Lateef', serif !important;}
