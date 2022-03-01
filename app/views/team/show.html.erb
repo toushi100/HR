@@ -1,7 +1,7 @@
 <div class="p-5 m-5">
-  <h1 > Teams's name : <%=@team.name%> </h1>
-  <h3 > Teams's ID : <%=@team.id%> </h3>
-  <h3 > Teams's Description : <%=@team.description%> </h3>
-  <h3 > Teams's Members : <% for i in Employee.where(teams_id:@team.id)%><%=i.name%>  <%end%> </h3>
-  <h3 > Teams's Team Lead : <%= Employee.where(@team.team_lead)[0].name%> </h3>
+  <h1 > <%= t'team.index.name'%> : <%=@team.name%> </h1>
+  <h3 > <%= t'team.index.id'%>: <%=@team.id%> </h3>
+  <h3 > <%= t'team.index.description'%> : <%=@team.description%> </h3>
+  <h3 > <%= t'team.index.members'%>: <% for i in Employee.where(teams_id:@team.id)%><%=i.name%>  <%end%> </h3>
+  <h3 > <%= t'team.index.team_lead'%>: <%= Employee.where(@team.team_lead)[0].name%> </h3>
 </div>
