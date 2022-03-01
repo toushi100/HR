@@ -1,16 +1,16 @@
 
 <div class = "row">
   <div class="col-1 my-5 text-left">
-    <a class="btn btn-primary rounded-1" href="javascript:history.back()"> Back</a>
+    <a class="btn btn-primary rounded-1" href="javascript:history.back()"> <%= t'button.back'%></a>
   </div>
   <div class="col-10 my-5 text-right p-0">
   
   </div>
   <div class="col-1 my-5 text-right p-0">
-    <a class="btn btn-primary rounded-1  float-right" href="target/new"> Add New Target</a>
+    <a class="btn btn-primary rounded-1  float-right" href="target/new"> <%= t'button.newtar'%></a>
   </div>
 </div>
-<h1>Target</h1>
+<h1><%= t'target.index.target'%></h1>
 
 
 <div class="container  mt-5 pt-5">
@@ -32,14 +32,14 @@
     <table class="table table-dark">
       <thead>
         <tr>
-          <th scope="col">ID</th>
-          <th scope="col">Title</th>
-          <th scope="col">description</th>
-          <th scope="col">Start date</th>
-          <th scope="col">Finish Date</th>
-          <th scope="col">Team</th>
-          <th scope="col">Status</th>
-          <th class = "text-center"scope="col">Links</th>
+          <th scope="col"><%= t'target.index.id'%></th>
+          <th scope="col"><%= t'target.index.title'%></th>
+          <th scope="col"><%= t'target.index.description'%></th>
+          <th scope="col"><%= t'target.index.start'%> </th>
+          <th scope="col"><%= t'target.index.finish'%> </th>
+          <th scope="col"><%= t'target.index.team'%></th>
+          <th scope="col"><%= t'target.index.status'%></th>
+          <th class = "text-center"scope="col"><%= t'target.index.links'%></th>
         </tr>
       </thead>
       <% for tar in @target%>
@@ -61,9 +61,9 @@
             </td>
        
             <td>  <%= tar.status %> </td>
-            <td><a class = "btn btn-primary p-1 py-0" href = "target/<%=tar.id%>">Show</a></td>
-            <td><a class = "btn btn-warning p-1 py-0"href = "target/<%=tar.id%>/edit">edit</a></td>
-            <td><%= button_to "Delete",{ action: "destroy", id: tar.id },
+            <td><a class = "btn btn-primary p-1 py-0" href = "target/<%=tar.id%>"><%= t'button.show'%></a></td>
+            <td><a class = "btn btn-warning p-1 py-0"href = "target/<%=tar.id%>/edit"><%= t'button.edit'%></a></td>
+            <td><%= button_to I18n.t('button.delete'),{ action: "destroy", id: tar.id },
                                 method: :delete, data: { confirm: "Are you sure?" } ,
                                 class: "btn btn-danger p-1 py-0"%></td>
           </tr>
