@@ -11269,3 +11269,7 @@ textarea.form-control-lg {
 
 a{text-decoration: none}
 
+.sidebar:hover{
+  background-color: grey;
+  color: black;
+}
